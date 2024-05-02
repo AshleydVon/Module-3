@@ -1,8 +1,11 @@
-// document.querySelector used to the reference, allowing for EventListener to be added and implement with callback function/direction.*/
+//*document.querySelector used to the reference, allowing for EventListener to be added and implement with callback function/direction.*/
+
 const addEmployeesBtn = document.querySelector("#add-employees-btn");
 
-// Function set to collect employee data, with Array added empty to navigate/control predefined employee data.*/
+//*Function set to collect employee data, with Array added empty to navigate/control predefined employee data.*/
+
 const collectEmployees = () => {
+  
   //*Intialized empty Array to store, add, modify employee data.*/
 
   const employeesArray = [];
@@ -10,11 +13,12 @@ const collectEmployees = () => {
 
   
   while (addEmployee) {
-      /** Set let to input promts for employee's first/last name/salary. 
-       * Ensured the loop would not repeat if cancelled* */
+     
+    /** Set let to input promts for employee's first/last name/salary.*/
+       /* Ensured the loop would not repeat if cancelled* */
 
-    let firstName = window.prompt("Enter the employee's first name:");
-    if (firstName === null) {
+         let firstName = window.prompt("Enter the employee's first name:");
+        if (firstName === null) {
       console.log("First name prompt was canceled.");
       break; //* Null ensures there is an exit the loop if first name prompt is canceled.*/
     }
@@ -31,8 +35,8 @@ const collectEmployees = () => {
     }
 
 
-    /** Set constant ensuring variable would not be changed with the information
-     * detailed. **/
+    /** Set constant ensuring variable would not be changed with the information */
+     /* detailed. **/
     
 
 
@@ -43,37 +47,39 @@ const collectEmployees = () => {
     };
 
 
-    /** Added object to the array to ensure data is organized and there is the needed
-     * flexibility to collect the prompted information*/
+    /** Added object to the array to ensure data is organized and there is the needed */
+     /* flexibility to collect the prompted information*/
 
 
     employeesArray.push(employee);
 
-    console.log(`Added Employee: ${employee.firstName} ${employee.lastName}`); //* console.log can be used for debuging purposes by tracking what happens in the code, 
+    console.log(`Added Employee: ${employee.firstName} ${employee.lastName}`); //* console.log can be used for debuging purposes by tracking what happens in the code, */
     /*confirming employee information succesfully added.*/
 
-    // window.confirm uses prompt to inquire if another employee would like to be added.*/
+    //* window.confirm uses prompt to inquire if another employee would like to be added.*/
 
     addEmployee = window.confirm("Would you like to add another employee?");
   }
 
-  return employeesArray; //*Return the collected array of employees
-  /** Created the return array for the objects/employees to ensure 
-   * data is returned as specified and organized*/
+  return employeesArray; //*Return the collected array of employees */
+  /** Created the return array for the objects/employees to ensure  */
+   /* data is returned as specified and organized.*/
+
 };
 
-// Function to display employees in the table
+
   /** Set function to display employee information and to indicate
    * how the information will be used/organized */
+
 const displayEmployeesInTable = (employeesArray) => {
-  const employeeTable = document.querySelector("#employee-table"); // Reference targets the table with the set employee information.Get a reference to the table body */
+  const employeeTable = document.querySelector("#employee-table"); //*Reference targets the table with the set employee information.Get a reference to the table body */
   if (!employeeTable) {
     console.log("Error: #employee-table element not found.");
-    return; // conole.log "Error" ensures early exit to avoid errors. * Prevent null reference errors
+    return; //*conole.log "Error" ensures early exit to avoid errors. * Prevent null reference errors.*/
   }
 
   employeeTable.innerHTML = ''; 
-  //* innerHTML allows table to be cleared and new rows
+  //* innerHTML allows table to be cleared and new rows */
   /* are created without any duplicated information or errors.*/
 
   //*Add each employee as a new row to the table Loop created in Array for each object containing data/information.*/
@@ -97,6 +103,7 @@ const displayEmployeesInTable = (employeesArray) => {
 };
 
 //*Added EventListener for the "Add employee" button to specify what happens when button is clicked. */
+
 addEmployeesBtn.addEventListener("click", () => {
   console.log("Add Employee button clicked!"); //*Debugs by verifying the EventListener and by tracing interactions.*/
 
