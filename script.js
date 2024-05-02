@@ -184,3 +184,6 @@ const trackEmployeeData = function() {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
+
+
+/* http://127.0.0.1:5500/index.html*/       
